@@ -23,13 +23,13 @@ export default function home() {
                   scrambleChars={"010"}
                 >
                   <h1 className="font-bold text-5xl ">
-                    Hello, I'm A.D
+                    Hello, I&apos;m A.D
                     <br />
-                    I'm developer
+                    I&apos;m developer
                   </h1>
                 </ScrambledText>
                 <p className="  max-w-[80%] font-light">
-                  I'm a full-stack developer who values simplicity, performance,
+                  I&apos;m a full-stack developer who values simplicity, performance,
                   and thoughtful design. I build with tools like React and
                   Node.js. <br />
                   <br />

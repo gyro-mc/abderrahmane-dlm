@@ -78,7 +78,7 @@ const MagnetLines: React.FC<MagnetLinesProps> = ({
         backgroundColor: lineColor,
         width: lineWidth,
         height: lineHeight,
-        //@ts-ignore
+        //@ts-expect-error CSS custom property assignment requires this override
         "--rotate": `${baseAngle}deg`,
         transform: "rotate(var(--rotate))",
         willChange: "transform",

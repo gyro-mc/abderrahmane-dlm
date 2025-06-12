@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
 import TiltedCard from "@/src/blocks/Components/TiltedCard/TiltedCard";
 interface DataType {
   index: string;
