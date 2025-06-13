@@ -1,3 +1,5 @@
+import { image } from "framer-motion/client";
+
 export const projectsData = [
   {
     index: "01",
@@ -22,5 +24,13 @@ export const projectsData = [
       "University Library is a web app that lets students search, borrow, and manage books online. It simplifies library access and helps users stay organized with their reading and research.",
     image: "/university-library.png",
     githubLink: "https://github.com/gyro-mc/University-libarary",
+  },
+  {
+    index: "04",
+    title: "SM",
+    description:
+      "Stay ahead in the game with real-time stock insights and smart investment tools. Empowering traders and investors with data-driven decisions every day.",
+    image: "/stock-market",
+    githubLink: "https://github.com/k-a-r-s/stock-market-project",
   },
 ];
