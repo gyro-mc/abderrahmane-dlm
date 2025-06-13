@@ -15,10 +15,10 @@ export default function NavBar() {
           <div className="flex flex-row justify-end pt-5">
             <ul className="flex flex-row gap-8">
               <li className="relative inline-block pb-1 border-b-2 border-transparent hover:border-black transition duration-200 cursor-pointer">
-                projects
+               <a href="#projects">projects</a> 
               </li>
               <li className="relative inline-block pb-1 border-b-2 border-transparent hover:border-black transition duration-200 cursor-pointer">
-                contacts
+                <a href="#contacts">contacts</a> 
               </li>
             </ul>
           </div>

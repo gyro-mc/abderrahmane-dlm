@@ -1,43 +1,59 @@
-"use client ";
-import ScrambledText from "@/src/blocks/TextAnimations/ScrambledText/ScrambledText";
+"use client";
 import { projectsData } from "@/lib/projectsData";
 import NavBar from "@/components/navBar";
 import MagnetLines from "@/src/blocks/Animations/MagnetLines/MagnetLines";
 import { Separator } from "@/components/ui/separator";
 import ProjectCard from "@/components/projectCard";
+import { motion } from "framer-motion";
 import Footer from "@/components/footer";
-export default function home() {
+export default function Home() {
   return (
-    <div className="w-full h-auto">
+    <div className="w-full h-auto relative">
       <NavBar />
       <div className="flex flex-col items-center gap-40">
         <div className="w-[60%] bg-grey-100 ">
           <div className="flex flex-col pt-[15%] gap-14 ">
             <div className="flex flex-row ">
               <div className=" flex flex-col gap-14 w-[60%]  p-6">
-                <ScrambledText
-                  className="scrambled-text-demo  w-full"
-                  radius={50}
-                  duration={2.7}
-                  speed={0.5}
-                  scrambleChars={"010"}
+                <motion.h1
+                  className="font-bold text-5xl  "
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
                 >
-                  <h1 className="font-bold text-5xl ">
-                    Hello, I&apos;m A.D
-                    <br />
-                    I&apos;m developer
-                  </h1>
-                </ScrambledText>
-                <p className="  max-w-[80%] font-light">
-                  I&apos;m a full-stack developer who values simplicity, performance,
-                  and thoughtful design. I build with tools like React and
-                  Node.js. <br />
+                  Hello, I&apos;m A.D
                   <br />
-                  Always aiming for clean, reliable code. Clarity and empathy
-                  guide my work and how I solve problems.
-                </p>
+                  I&apos;m developer
+                </motion.h1>
+                <div>
+                  <motion.p
+                    className="  max-w-[80%] font-light"
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2, duration: 0.4 }}
+                  >
+                    I&apos;m a full-stack developer who values simplicity,
+                    performance, and thoughtful design. I build with tools like
+                    React and Node.js. <br />
+                  </motion.p>
+                  <motion.p
+                    className="  max-w-[80%] font-light"
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.4 }}
+                  >
+                    <br />
+                    Always aiming for clean, reliable code. Clarity and empathy
+                    guide my work and how I solve problems.
+                  </motion.p>
+                </div>
               </div>
-              <div className="w-[40%] ">
+              <motion.div
+                className="w-[40%] "
+                initial={{ opacity: 0 ,y:20}}
+                animate={{ opacity: 1 ,y:0}}
+                transition={{duration:0.4}}
+              >
                 <MagnetLines
                   rows={10}
                   columns={14}
@@ -48,19 +64,25 @@ export default function home() {
                   baseAngle={0}
                   style={{ margin: "2rem auto" }}
                 />
-              </div>
+              </motion.div>
             </div>
-            <Separator className="my-4 bg-black" />
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.4 }}
+            >
+              <Separator className="my-4 bg-black" />
+            </motion.div>
           </div>
         </div>
-        <div className="w-[60%] flex flex-col justify-center gap-40">
+        <div className="w-[60%] flex flex-col justify-center gap-40 " id="projects">
           {projectsData.map((project, index) => (
             <ProjectCard key={index} data={project} />
           ))}
-        <Separator className="my-4 bg-black w-[80vw]"/>
+          <Separator className="my-4 bg-black w-[80vw]" />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

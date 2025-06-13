@@ -30,7 +30,7 @@ export const projectsData = [
     title: "SM",
     description:
       "Stay ahead in the game with real-time stock insights and smart investment tools. Empowering traders and investors with data-driven decisions every day.",
-    image: "/stock-market",
+    image: "/stock-market.png",
     githubLink: "https://github.com/k-a-r-s/stock-market-project",
   },
 ];

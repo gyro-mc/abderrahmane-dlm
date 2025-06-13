@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import TiltedCard from "@/src/blocks/Components/TiltedCard/TiltedCard";
+import { motion } from "framer-motion";
 interface DataType {
   index: string;
   title: string;
@@ -11,12 +12,18 @@ interface DataType {
 
 export default function ProjectCard({ data }: { data: DataType }) {
   return (
-    <div className="flex flex-row justify-between">
+    <motion.div
+      className="flex flex-row justify-between"
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }} // Animate only once when 50% is in view
+      transition={{ duration: 0.6, delay: 0.2 }}
+    >
       <div className="flex flex-col gap-10">
         <div className="flex flex-row justify-start items-center w-[600px] ">
-          <div className="border-transparent border-r-2 border-r-black border-b-2 border-b-black p-10 pr-20 w-[500px]">
+          <motion.div className="border-transparent border-r-2 border-r-black border-b-2 border-b-black p-10 pr-20 w-[500px]">
             <h1 className="text-5xl font-medium"> {data.title}</h1>
-          </div>
+          </motion.div>
           <div className="p-12 font-medium border-b-2 border-b-black w-[50%]">
             <h1 className="text-2xl">{data.index}</h1>
           </div>
@@ -43,6 +50,6 @@ export default function ProjectCard({ data }: { data: DataType }) {
           />
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }
